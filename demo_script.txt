@@ -1,0 +1,48 @@
+register admin password123 admin
+login admin password123
+whoami
+register user1 pass123
+create-file demo.txt
+write-file demo.txt "Hello Multi-Threaded File System!"
+read-file demo.txt
+file-info demo.txt
+create-dir documents
+create-dir projects
+list-dir .
+copy-file demo.txt documents/demo_copy.txt
+move-file demo.txt projects/
+list-dir documents
+list-dir projects
+rename-file projects/demo.txt projects/renamed_demo.txt
+create-file large_file.txt
+write-file large_file.txt "This is a large file with lots of content for compression testing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+compress-file large_file.txt
+compression-stats
+decompress-file large_file.txt
+get-cache-policy
+set-cache-policy LRU
+resize-cache 1000
+pin-file projects/renamed_demo.txt
+prefetch-file documents/demo_copy.txt
+cache-analytics
+hot-files 3
+create-backup full_backup_1
+list-backups
+backup-dashboard
+find-file *.txt
+find-file demo* documents
+set-cache-policy LFU
+set-cache-policy FIFO
+set-cache-policy LIFO
+show-stats
+unpin-file projects/renamed_demo.txt
+create-backup full_backup_2
+list-backups
+delete-backup full_backup_1
+show-stats
+cache-analytics
+reset-stats
+show-stats
+remove-user user1
+logout
+exit

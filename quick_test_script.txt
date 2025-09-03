@@ -1,0 +1,41 @@
+# Quick Test Script - Essential Commands Only
+# For fast testing of core functionality
+
+# Setup
+remove-user admin
+register admin password123 admin
+login admin password123
+whoami
+
+# Core file operations
+create-file test.txt
+write-file test.txt "Quick test content for the multi-threaded file system."
+read-file test.txt
+file-info test.txt
+
+# Directory and file management
+create-dir testdir
+copy-file test.txt testdir/test_copy.txt
+move-file test.txt testdir/test_moved.txt
+list-dir testdir
+
+# Cache and compression
+set-cache-policy LRU
+compress-file testdir/test_moved.txt
+compression-stats
+decompress-file testdir/test_moved.txt
+
+# Backup
+create-backup quick_backup
+list-backups
+backup-dashboard
+
+# Statistics
+show-stats
+cache-analytics
+
+# Cleanup
+delete-backup quick_backup
+logout
+remove-user admin
+exit
